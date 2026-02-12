@@ -22,9 +22,14 @@ noBtn.addEventListener('click', function(e) {
 });
 
 function moveNoButton() {
+    // Get button dimensions using getBoundingClientRect for reliability
+    const buttonRect = noBtn.getBoundingClientRect();
+    const buttonWidth = buttonRect.width || 100; // Fallback if width is 0
+    const buttonHeight = buttonRect.height || 50; // Fallback if height is 0
+    
     // Get the viewport dimensions
-    const maxX = window.innerWidth - noBtn.offsetWidth - 20;
-    const maxY = window.innerHeight - noBtn.offsetHeight - 20;
+    const maxX = Math.max(0, window.innerWidth - buttonWidth - 20);
+    const maxY = Math.max(0, window.innerHeight - buttonHeight - 20);
     
     // Generate random positions
     const randomX = Math.floor(Math.random() * maxX);
