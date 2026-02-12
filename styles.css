@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ffeef8 0%, #ffe0f0 50%, #ffd4e5 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+}
+
+.prompt-card {
+    background: white;
+    padding: 60px 80px;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3);
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.question {
+    font-size: 2.5rem;
+    color: #e91e63;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.button-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    position: relative;
+}
+
+.btn {
+    padding: 20px 50px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-yes {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.btn-yes:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(245, 87, 108, 0.4);
+}
+
+.btn-yes:active {
+    transform: scale(1.05);
+}
+
+.btn-no {
+    background: linear-gradient(135deg, #a8a8a8 0%, #7f7f7f 100%);
+    color: white;
+    position: absolute;
+    transition: all 0.2s ease;
+}
+
+.success-message {
+    display: none;
+    background: white;
+    padding: 60px 80px;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3);
+    animation: celebrate 0.6s ease-out;
+}
+
+@keyframes celebrate {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) rotate(-10deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(5deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.success-message.show {
+    display: block;
+}
+
+.celebration {
+    font-size: 3rem;
+    color: #e91e63;
+    margin-bottom: 20px;
+    animation: bounce 0.6s ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+.message {
+    font-size: 1.8rem;
+    color: #d81b60;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.emoji-rain {
+    font-size: 2rem;
+    margin: 20px 0;
+    animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.excitement {
+    font-size: 1.3rem;
+    color: #c2185b;
+    line-height: 1.6;
+    margin-top: 15px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .prompt-card,
+    .success-message {
+        padding: 40px 30px;
+    }
+    
+    .question {
+        font-size: 1.8rem;
+    }
+    
+    .btn {
+        padding: 15px 35px;
+        font-size: 1.1rem;
+    }
+    
+    .button-container {
+        gap: 20px;
+    }
+    
+    .celebration {
+        font-size: 2.2rem;
+    }
+    
+    .message {
+        font-size: 1.4rem;
+    }
+    
+    .excitement {
+        font-size: 1.1rem;
+    }
+}
